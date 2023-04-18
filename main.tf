@@ -80,7 +80,7 @@ resource "azurerm_bastion_host" "bastion" {
 // Virtual Machines
 
 module "linux" {
-  source     = "github.com/terraform-azurerm-modules/terraform-azurerm-aad-linux-vm?ref=v1.0"
+  source     = "./linux-vm"
   depends_on = [azurerm_subnet.vms]
 
   name                = var.linux_server_name
@@ -93,7 +93,7 @@ module "linux" {
 }
 
 module "windows" {
-  source     = "github.com/terraform-azurerm-modules/terraform-azurerm-aad-windows-vm?ref=v1.0"
+  source     = "./windows-vm"
   depends_on = [azurerm_subnet.vms]
 
   name                = var.windows_server_name
