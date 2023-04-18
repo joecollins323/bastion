@@ -46,7 +46,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
     storage_account_type = "Standard_LRS"
   }
 
-  custom_data = base64encode(coalesce(var.cloud_init,file("${path.module}/cloud_init.yaml")))
+  custom_data = base64encode(coalesce(var.cloud_init, file("${path.module}/cloud_init.yaml")))
 
   admin_ssh_key {
     username   = var.admin_username

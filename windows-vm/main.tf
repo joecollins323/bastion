@@ -41,7 +41,7 @@ resource "azurerm_windows_virtual_machine" "vm" {
   }
 
   # Upload PowerShell script via the custom data
-  custom_data = base64encode(coalesce(var.custom_data,file("${path.module}/custom_data.ps1")))
+  custom_data = base64encode(coalesce(var.custom_data, file("${path.module}/custom_data.ps1")))
 
   # Autologon configuration to kick off FirstLogon
   additional_unattend_content {

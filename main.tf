@@ -27,14 +27,14 @@ resource "azurerm_role_assignment" "virtual_machine_admins" {
   for_each             = toset(local.virtual_machine_admins)
   scope                = azurerm_resource_group.bastion.id
   role_definition_name = "Virtual Machine Administrator Login"
-  principal_id         = data.azurerm_client_config.current.object_id
+  principal_id         = "4790d30d-263e-4d59-bba5-c796406e80c3"
 }
 
 resource "azurerm_role_assignment" "virtual_machine_users" {
   for_each             = toset(var.virtual_machine_users)
   scope                = azurerm_resource_group.bastion.id
   role_definition_name = "Virtual Machine User Login"
-  principal_id         = data.azurerm_client_config.current.object_id
+  principal_id         = "4790d30d-263e-4d59-bba5-c796406e80c3"
 }
 
 // Public SSH key
