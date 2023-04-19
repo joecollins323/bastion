@@ -7,7 +7,7 @@ variable "resource_group_name" {
 variable "location" {
   description = "Azure region."
   type        = string
-  default     = "West Europe"
+  default     = "South Central US"
 }
 
 variable "bastion_name" {
